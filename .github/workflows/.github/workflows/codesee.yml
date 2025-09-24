@@ -1,0 +1,14 @@
+name: CodeSee Map
+on:
+  push:
+    branches: [main]
+
+jobs:
+  codesee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run CodeSee
+        uses: Codesee-io/codesee-map-action@v2
+        with:
+          api_key: ${{ secrets.CODESEE_API_KEY }}
